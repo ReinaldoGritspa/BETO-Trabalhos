@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<title>Estudo Tags de Formulário - Reinaldo Ribeiro</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        color: #222;
+        background: #fff;
+    }
+    header {
+        border-bottom: 2px solid #666;
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    header p {
+        margin: 5px 0;
+        color: #555;
+        font-size: 16px;
+    }
+    h1 {
+        margin-bottom: 5px;
+        font-weight: 700;
+        color: #111;
+    }
+
+    /* Container dos cards */
+    .card-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .card {
+        flex: 1 1 180px;
+        max-width: 220px;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+        padding: 15px 20px;
+        text-align: center;
+        background: #f8f8f8;
+        box-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        font-weight: 600;
+        color: #222;
+        text-decoration: none;
+        user-select: none;
+        cursor: pointer;
+    }
+    .card:hover, .card:focus {
+        background-color: #e2e2e2;
+        box-shadow: 1px 2px 10px rgba(0,0,0,0.15);
+        outline: none;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 40px;
+        table-layout: fixed;
+    }
+    th, td {
+        border: 1px solid #999;
+        padding: 10px 8px;
+        vertical-align: top;
+        font-size: 14px;
+        word-wrap: break-word;
+    }
+    th {
+        background: #eee;
+        font-weight: 600;
+        width: 33.33%;
+    }
+    input, select, textarea, button {
+        font-size: 14px;
+        margin-top: 4px;
+        width: 95%;
+        max-width: 250px;
+        padding: 4px 6px;
+        box-sizing: border-box;
+    }
+    label {
+        display: block;
+        margin-top: 6px;
+    }
+    progress {
+        width: 100%;
+        height: 20px;
+        vertical-align: middle;
+    }
+    .meter {
+        position: relative;
+        width: 100%;
+        height: 20px;
+        background: #ddd;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,.2);
+        margin-top: 6px;
+        max-width: 250px;
+    }
+    .meter > span {
+        display: block;
+        height: 100%;
+        border-radius: 4px;
+        transition: width 0.4s ease;
+    }
+    .meter.yellow > span {
+        background-color: #f1c40f;
+    }
+    .meter.red > span {
+        background-color: #e74c3c;
+    }
+    .meter.green > span {
+        background-color: #2ecc71;
+    }
+    .small-text {
+        font-size: 12px;
+        color: #666;
+        margin-top: 4px;
+    }
+    /* Texto Conteúdo */
+    #conteudo-text {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #333;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Estudo de Tags de Formulário em HTML</h1>
+    <p><b>Curso:</b> TADS 1 - Análise e Desenvolvimento de Sistemas</p>
+    <p><b>Aluno:</b> Reinaldo Ribeiro Gritspa Junior</p>
+    <p><b>Entrega:</b> 07/04</p>
+    <p><b>Disciplina:</b> Desenvolvimento Web / HTML</p>
+</header>
+
+<!-- Cards com links para os formulários -->
+<div class="card-container" role="navigation" aria-label="Navegação para formulários">
+    <a href="formulario1.html" class="card" tabindex="0">Formulário 1</a>
+    <a href="formulario2.html" class="card" tabindex="0">Formulário 2</a>
+    <a href="formulario3.html" class="card" tabindex="0">Formulário 3</a>
+</div>
+
+<!-- Texto Conteúdo -->
+<div id="conteudo-text">Conteúdo:</div>
+
+<table>
+<thead>
+<tr>
+    <th>Tag / Atributos</th>
+    <th>Descrição</th>
+    <th>Exemplo prático</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td>&lt;form&gt;<br><br>
+<b>Atributos:</b><br>
+action — URL de destino dos dados<br>
+method — GET | POST<br>
+enctype — codificação (ex: multipart/form-data para arquivos)<br>
+target — _self | _blank | _parent | _top<br>
+novalidate — desativa validação nativa<br>
+autocomplete — on | off
+</td>
+<td>Contêiner principal que agrupa os campos de um formulário.</td>
+<td>
+<form action="/enviar" method="post">
+  <input type="text" name="nome" placeholder="Digite seu nome" required />
+  <input type="submit" value="Enviar" />
+</form>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="text"&gt;<br><br>
+<b>Atributos:</b><br>
+name — chave enviada ao servidor<br>
+value — valor inicial<br>
+placeholder — texto de dica<br>
+maxlength / minlength<br>
+required — campo obrigatório<br>
+readonly — somente leitura<br>
+disabled — desativado<br>
+autofocus — foco automático<br>
+autocomplete — on | off<br>
+pattern — regex de validação<br>
+size — largura visual em caracteres
+</td>
+<td>Campo de texto de linha única.</td>
+<td>
+<label>Nome: <input type="text" name="nome" placeholder="Digite seu nome" required /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="password"&gt;<br><br>
+<b>Atributos:</b> mesmos do type="text"</td>
+<td>Campo de senha — caracteres ocultados.</td>
+<td>
+<label>Senha: <input type="password" name="senha" placeholder="••••••" required /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="email"&gt;<br><br>
+<b>Atributos:</b> mesmos do type="text" +<br>
+multiple — aceita vários e-mails separados por vírgula</td>
+<td>Campo de e-mail com validação nativa de formato.</td>
+<td>
+<label>E-mail: <input type="email" name="email" placeholder="exemplo@email.com" required /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="number"&gt;<br><br>
+<b>Atributos:</b><br>
+min — valor mínimo<br>
+max — valor máximo<br>
+step — incremento (ex: 0.5)</td>
+<td>Campo numérico com controles de incremento/decremento.</td>
+<td>
+<label>Quantidade: <input type="number" name="quantidade" min="1" max="10" value="1" /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="range"&gt;<br><br>
+<b>Atributos:</b> min, max, step, value</td>
+<td>Controle deslizante (slider) para valores numéricos.</td>
+<td>
+<label>Volume: <input type="range" min="0" max="100" step="5" value="50" /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="date"&gt;<br><br>
+<b>Atributos:</b> min, max, value</td>
+<td>Seletor de data (ano-mês-dia).</td>
+<td>
+<label>Data: <input type="date" name="data" /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="time"&gt;<br><br>
+<b>Atributos:</b> min, max, step</td>
+<td>Seletor de horário (horas e minutos).</td>
+<td>
+<label>Horário: <input type="time" name="hora" /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="datetime-local"&gt;<br><br>
+<b>Atributos:</b> min, max</td>
+<td>Seletor de data e hora combinados (sem fuso horário).</td>
+<td>
+<label>Data e hora: <input type="datetime-local" name="datahora" /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="checkbox"&gt;<br><br>
+<b>Atributos:</b><br>
+name — checkboxes com mesmo name formam um grupo<br>
+value — valor enviado quando marcado<br>
+checked — marcado por padrão<br>
+required</td>
+<td>Caixa de seleção. Múltiplas podem ser marcadas ao mesmo tempo.<br>
+Particularidade: se não marcado, o campo não é enviado ao servidor.</td>
+<td>
+<label><input type="checkbox" name="termos" value="aceito" required /> Aceito os termos</label><br>
+<label><input type="checkbox" name="newsletter" value="sim" /> Receber newsletter</label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="radio"&gt;<br><br>
+<b>Atributos:</b><br>
+name — agrupa botões (mesmo name = mesmo grupo)<br>
+value — valor enviado quando selecionado<br>
+checked — selecionado por padrão</td>
+<td>Seleção exclusiva dentro de um grupo.<br>
+Particularidade: todos com o mesmo name são mutuamente exclusivos.</td>
+<td>
+<label><input type="radio" name="genero" value="masculino" checked /> Masculino</label>
+<label><input type="radio" name="genero" value="feminino" /> Feminino</label>
+<label><input type="radio" name="genero" value="outro" /> Outro</label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="file"&gt;<br><br>
+<b>Atributos:</b><br>
+accept — tipos aceitos (ex: .pdf, image/*, .jpg,.png)<br>
+multiple — permite selecionar vários arquivos</td>
+<td>Seletor de arquivo.<br>
+Particularidade: o formulário deve ter enctype="multipart/form-data".</td>
+<td>
+<form enctype="multipart/form-data">
+<label>Arquivo: <input type="file" name="arquivo" accept=".pdf,image/*" /></label>
+</form>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="color"&gt;<br><br>
+<b>Atributos:</b> value — cor padrão em hexadecimal</td>
+<td>Seletor de cor.</td>
+<td>
+<label>Cor favorita: <input type="color" name="cor" value="#ff0000" /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="hidden"&gt;<br><br>
+<b>Atributos:</b> name, value</td>
+<td>Campo invisível. Envia dados sem exibir ao usuário (ex: token CSRF, ID de sessão).</td>
+<td>
+<form>
+<input type="hidden" name="token" value="abc123" />
+</form>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="search"&gt;<br><br>
+<b>Atributos:</b> mesmos do type="text"</td>
+<td>Campo de busca. Pode exibir botão de limpar (×) dependendo do navegador.</td>
+<td>
+<label>Buscar: <input type="search" name="busca" placeholder="Pesquisar..." /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="tel"&gt;<br><br>
+<b>Atributos:</b> pattern, placeholder, mesmos do type="text"</td>
+<td>Campo de telefone. Em dispositivos móveis abre teclado numérico.</td>
+<td>
+<label>Telefone: <input type="tel" name="telefone" placeholder="(67) 99999-9999" pattern="\(\d{2}\) \d{5}-\d{4}" /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="url"&gt;<br><br>
+<b>Atributos:</b> mesmos do type="text"</td>
+<td>Campo de URL com validação nativa de formato.</td>
+<td>
+<label>Site: <input type="url" name="site" placeholder="https://exemplo.com" /></label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="submit"&gt;<br><br>
+<b>Atributos:</b><br>
+value — texto do botão<br>
+formaction — sobrescreve action do form<br>
+formmethod — sobrescreve method do form<br>
+formnovalidate — ignora validação</td>
+<td>Botão que envia o formulário.</td>
+<td>
+<form>
+<input type="submit" value="Enviar formulário" />
+</form>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="reset"&gt;<br><br>
+<b>Atributos:</b> value — texto do botão</td>
+<td>Botão que restaura todos os campos ao valor inicial.</td>
+<td>
+<form>
+<input type="reset" value="Limpar campos" />
+</form>
+</td>
+</tr>
+
+<tr>
+<td>&lt;input type="button"&gt;<br><br>
+<b>Atributos:</b> value — texto do botão</td>
+<td>Botão sem comportamento padrão. Ação definida via JavaScript.</td>
+<td>
+<input type="button" value="Botão Genérico" onclick="alert('Clique detectado!')" />
+</td>
+</tr>
+
+<tr>
+<td>&lt;button&gt;<br><br>
+<b>Atributos:</b><br>
+type — submit (padrão) | reset | button<br>
+name, value<br>
+disabled<br>
+formaction, formmethod, formnovalidate<br><br>
+Particularidade: pode conter HTML interno (ícones, imagens, texto formatado).
+</td>
+<td>Botão mais flexível que &lt;input type="button"&gt;.</td>
+<td>
+<button type="submit">Enviar formulário</button>
+<button type="reset">Limpar</button>
+<button type="button" onclick="alert('Botão de ação')">Clique aqui</button>
+</td>
+</tr>
+
+<tr>
+<td>&lt;textarea&gt;<br><br>
+<b>Atributos:</b><br>
+rows — número de linhas visíveis<br>
+cols — número de colunas visíveis<br>
+maxlength / minlength<br>
+placeholder<br>
+readonly, disabled, required<br>
+wrap — soft | hard
+</td>
+<td>Área de texto multilinha.<br>
+Particularidade: o valor padrão fica entre as tags, não no atributo value.</td>
+<td>
+<label>Escreva sua mensagem:<br>
+<textarea rows="4" cols="40" placeholder="Digite aqui..."></textarea>
+</label>
+</td>
+</tr>
+
+<tr>
+<td>&lt;select&gt;<br><br>
+<b>Atributos:</b><br>
+name<br>
+multiple — permite selecionar várias opções<br>
+size — nº de opções visíveis simultaneamente<br>
+required, disabled<br><br>
+&lt;option&gt;<br>
+<b>Atributos:</b><br>
+value — valor enviado ao servidor<br>
+selected — selecionado por padrão<br>
+disabled — opção desativada<br>
+label — rótulo alternativo<br><br>
+&lt;optgroup&gt;<br>
+<b>Atributos:</b><br>
+label — título do grupo (obrigatório)<br>
+disabled — desativa o grupo inteiro
+</td>
+<td>
+Lista de seleção.<br>
+<b>Particularidades:</b><br>
+— O texto entre &lt;option&gt; é o que o usuário vê; value é o que é enviado.<br>
+— Se value for omitido, o texto visível é enviado.<br>
+— &lt;optgroup&gt; agrupa opções com um rótulo visual (não é selecionável).<br>
+— Com multiple, use Ctrl/Cmd + clique para selecionar várias.
+</td>
+<td>
+<select name="cidade" aria-label="Selecione uma cidade">
+    <option value="">Selecione uma cidade</option>
+    <option value="SP">São Paulo</option>
+    <option value="RJ">Rio de Janeiro</option>
+    <optgroup label="Região Sul">
+        <option value="PR">Paraná</option>
+        <option value="RS">Rio Grande do Sul</option>
+    </optgroup>
+</select>
+</td>
+</tr>
+
+<tr>
+<td>&lt;datalist&gt;<br><br>
+<b>Atributos:</b><br>
+id — deve corresponder ao list do input<br><br>
+Contém &lt;option&gt; com value
+</td>
+<td>
+Fornece sugestões (autocomplete) para um &lt;input&gt;.<br>
+<b>Particularidade:</b> o usuário ainda pode digitar um valor fora da lista (diferente de select).
+</td>
+<td>
+Linguagem: <input type="text" list="linguagens" placeholder="Ex: Python" />
+<datalist id="linguagens">
+    <option value="Python">
+    <option value="JavaScript">
+    <option value="Java">
+    <option value="C#">
+    <option value="PHP">
+</datalist>
+</td>
+</tr>
+
+<tr>
+<td>&lt;label&gt;<br><br>
+<b>Atributos:</b><br>
+for — deve corresponder ao id do campo associado (ou envolver o campo diretamente, sem for)
+</td>
+<td>
+Rótulo associado a um campo.<br>
+<b>Particularidade:</b> clicar no label foca/ativa o campo correspondente — importante para acessibilidade.
+</td>
+<td>
+<label for="usuario">Usuário:</label>
+<input id="usuario" type="text" name="usuario" placeholder="Digite seu usuário" />
+<label for="senha" style="margin-top: 8px;">Senha:</label>
+<input id="senha" type="password" name="senha" placeholder="••••••" />
+</td>
+</tr>
+
+<tr>
+<td>&lt;fieldset&gt;<br><br>
+<b>Atributos:</b><br>
+disabled — desativa todos os campos internos<br>
+name, form<br><br>
+&lt;legend&gt;<br>
+Sem atributos específicos. Texto descritivo do grupo.
+</td>
+<td>
+Agrupa campos relacionados visualmente com uma borda.<br>
+<b>Particularidade:</b> disabled no fieldset desativa todos os campos filhos de uma só vez.
+</td>
+<td>
+<fieldset>
+    <legend>Dados pessoais</legend>
+    <label>Nome:<br><input type="text" name="nome" /></label>
+    <label>Idade:<br><input type="number" name="idade" min="0" max="120" /></label>
+</fieldset>
+</td>
+</tr>
+
+<tr>
+<td>&lt;output&gt;<br><br>
+<b>Atributos:</b><br>
+for — IDs dos inputs que originam o valor<br>
+name, form
+</td>
+<td>
+Exibe o resultado de um cálculo ou ação (geralmente atualizado via JavaScript).
+</td>
+<td>
+<form oninput="resultado.value = parseInt(a.value) + parseInt(b.value)">
+    <input type="number" id="a" name="a" value="0" style="width:50px" />
+    +
+    <input type="number" id="b" name="b" value="0" style="width:50px" />
+    =
+    <output name="resultado" for="a b">0</output>
+</form>
+</td>
+</tr>
+
+<tr>
+<td>&lt;progress&gt;<br><br>
+<b>Atributos:</b><br>
+value — valor atual<br>
+max — valor máximo (padrão: 1)
+</td>
+<td>
+Barra de progresso.<br>
+<b>Particularidade:</b> sem value exibe animação de progresso indeterminado.
+</td>
+<td>
+Determinado: <progress value="0.7" max="1"></progress> 70%<br>
+Indeterminado: <progress></progress>
+</td>
+</tr>
+
+<tr>
+<td>&lt;meter&gt;<br><br>
+<b>Atributos:</b><br>
+value — valor atual (obrigatório)<br>
+min / max — intervalo<br>
+low — limite inferior do "bom"<br>
+high — limite superior do "bom"<br>
+optimum — valor ideal
+</td>
+<td>
+Medidor escalar dentro de um intervalo conhecido.<br>
+<b>Particularidade:</b> diferente de &lt;progress&gt;, representa uma medida, não um progresso.<br>
+Muda de cor conforme <i>low</i>, <i>high</i> e <i>optimum</i>.
+</td>
+<td>
+<div>
+    <label>Bateria:</label>
+    <div class="meter yellow" style="margin-bottom:8px;">
+        <span style="width:80%"></span>
+    </div>
+    <label>Crítico:</label>
+    <div class="meter red">
+        <span style="width:15%"></span>
+    </div>
+</div>
+</td>
+</tr>
+
+</tbody>
+</table>
+
+</body>
+</html>

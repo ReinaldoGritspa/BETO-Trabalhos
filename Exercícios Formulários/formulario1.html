@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Formulario 1</title>
+</head>
+
+<body>
+    <a href="paginainicial.html"> Pagina Inicial </a>
+
+    <table width="599px">
+        <tr>
+            <td colspan="4">
+                <h3>Formulário de Adesão</h3> Nós oferecemos uma opção de filiação sob medida para atender às suas
+                necessidades específicas. Para se inscrever, por favor, complete e envie o Formulário de Adesão abaixo.
+                Se você deseja maiores informações sobre a filiação em nossa organização ou sobre o processo de
+                inscrição, por favor, especifique as suas questões na caixa de comentário abaixo.
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td colspan="4">
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td> Nome*:</td>
+            <td colspan="2"> <input type="text" name="nome" required placeholder="First"> </td>
+            <td> <input type="text" name="sobrenome" placeholder="Last"> </td>
+        </tr>
+        <tr>
+            <td> E-mail*:</td>
+            <td colspan="3"> <input type="email" name="email" required> </td>
+        </tr>
+        <tr>
+            <td> Telefone:</td>
+            <td colspan="3"> <input type="tel" name="telefone" placeholder="#### #### #####"> </td>
+        </tr>
+        <tr>
+            <td> Endereço:</td>
+            <td colspan="3"> <input type="text" name="endereco" placeholder="Street Address"> </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2"> <input type="text" name="cidade" placeholder="City"> </td>
+            <td> <input type="text" name="estado" placeholder="State"> </td>
+        </tr>
+        <tr>
+            <Td></Td>
+            <td colspan="2"> <input type="text" name="postal" placeholder="Postal / Zip Code"> </td>
+            <td>
+                <select name="pais">
+                    <option value="" disabled selected>Country</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="EUA">EUA</option>
+                    <option value="Canadá">Canadá</option>
+                </select>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td> Planos de Adesão*</td>
+            <td><input type="radio" name="plano" value="Padrao" required checked> Padrao (R$200/ano)</td>
+            <td><input type="radio" name="plano" value="Prata"> Prata (R$450/ano)</td>
+            <td><input type="radio" name="plano" value="Ouro"> Ouro (R$600/ano)</td>
+        </tr>
+        <Tr>
+            <td> Como você ficou sabendo de nós?</td>
+            <Td colspan="3"> <input type="checkbox" name="checkbox" value="Um amigo"> Um Amigo
+            <td>
+        </Tr>
+        <tr>
+            <td></td>
+            <td colspan="3"> <input type="checkbox" name="checkbox" value="Facebook"> Facebook </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3"> <input type="checkbox" name="checkbox" value="twitter"> Twitter </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3"> <input type="checkbox" name="checkbox" value="Jornal"> Jornal </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3"> <input type="checkbox" name="checkbox" value="Paginasamarelas"> Paginas Amarelas </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3"> <input type="checkbox" name="checkbox" value="Other"> Other: </td>
+        </tr>
+        <tr>
+            <Td>
+                <p>Comentário:</p> Deixe-nos saber se há algo mais que voce deseja adicionar ao nosso formulário de
+                adesão.
+            </Td>
+            <td colspan="3"><textarea></textarea></td>
+        </tr>
+        <tr>
+            <Td> Termos de serviço*</Td>
+            <td colspan="3"> <input type="checkbox" name="termos" required> Eu concordo com os <a
+                    href="azul.html">Termos de Serviço</a> </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td colspan="4">
+                <h3>Assinatura Digital</h3> Ao enviar este formulario de adesão, você está concordando com os termos e
+                condições estabelecidos.
+            </td>
+        </tr>
+        <tr>
+            <Td colspan="4">
+                <fieldset> <br><br><br><br> <!-- Este foi meu maior improviso que já fiz-->
+                    <hr>
+                </fieldset>
+            </Td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2" style="background-color: #555; text-align: center; padding: 15px;">
+                <button style="background-color: #555; color: #fff; border: none; cursor: pointer;">
+                    Enviar formulário de adesão
+                </button>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+
+</html>

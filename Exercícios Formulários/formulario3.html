@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Formulario 3</title>
+</head>
+
+<body>
+
+    <a href="paginainicial.html"> Pagina Inicial </a>
+
+    <table  width="599px" style="border-collapse: collapse;">
+        <tr>
+            <td colspan="5" align="right" style="background-color: rgb(113, 184, 73);">
+                _ ▭
+                <button style="background-color:red; color:white; border:none;">X</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" width="35%" style="background-color: #eee;">
+                📄 Formulário elaborado &nbsp; X
+            </td>
+            <td colspan="3" style="background-color: rgb(113, 184, 73);"></td>
+        </tr>
+
+        <tr>
+            <td colspan="5" style="background-color: #eee;">
+                ← → 🔄 &nbsp;
+                <input type="text" value="📄 file:///D:/Projetos%20WEB/Projeto%20Curso " style="width:80%;"> ☆ ☰
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <h2>Formulário 3</h2>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5">
+                <fieldset> <!-- perguntar como faz isso da forma certa e como dar espaco-->
+                    <legend> Dados Pessoais </legend>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome"> <br>
+                    <label for="endereco">Endereço:</label>
+                    <input type="text" id="endereco" name="endereco"> <br>
+                    <label for="cidade">Cidade:</label>
+                    <input type="text" id="cidade" name="cidade"><br>
+                    <label for="estado">Estado:</label>
+                    <select name="estado" id="estado">
+                        <option value="SP">Sao Paulo</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="MG">Minas Gerais</option>
+                    </select>
+                </fieldset>
+            </td>
+        <tr>
+
+            <td colspan="5">
+                <fieldset>
+                    <legend> Dados Profissionais </legend>
+                    Natureza do Cargo <br>
+                    <input type="radio" id="cargo1" name="cargo" value="cargo1"> Gerencia
+                    <input type="radio" id="cargo2" name="cargo" value="cargo2"> Financeiro
+                    <input type="radio" id="cargo3" name="cargo" value="cargo3"> Recpeção
+                    <input type="radio" id="cargo4" name="cargo" value="cargo4"> Administrativo
+                    <input type="radio" id="cargo5" name="cargo" value="cargo5"> Jurídico <br><br>
+                    Area de interesse <br>
+                    <input type="checkbox" name="interesse1" value="interesse1"> Computação
+                    <input type="checkbox" name="interesse2" value="interesse2"> Biologia
+                    <input type="checkbox" name="interesse3" value="interesse3">Meio Ambiente
+                    <input type="checkbox" name="interesse4" value="interesse4"> Engenharia
+                    <input type="checkbox" name="interesse5" value="interesse5"> História<br><br>
+                    Mini Currículo:
+                    <textarea></textarea>
+                </fieldset>
+            </td>
+        </tr>
+        </tr>
+
+        <tr>
+            <td><button type="submit">Enviar</button></td>
+            <td><button type="submit">Limpar</button></td>
+            <td colspan="3"></td>
+
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
