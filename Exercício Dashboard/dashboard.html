@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="styles.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <aside class="sidebar">
+
+      <div class="logo">
+
+        <span class="material-symbols-outlined icon-yellow">
+          sports_basketball
+        </span>
+
+      </div>
+
+      <div class="menu">
+
+        <div class="menu-item-first">
+
+          <span class="material-symbols-outlined icon-yellow">
+            search_insights
+          </span>
+
+          <span class="menu-item-text-first">
+            Overview
+          </span>
+
+        </div>
+
+        <div class="menu-item">
+
+          <span class="material-symbols-outlined icon">
+            approval_delegation
+          </span>
+
+          <span class="menu-item-text">
+            Revenue
+          </span>
+
+        </div>
+
+        <div class="menu-item">
+
+          <span class="material-symbols-outlined icon">
+            paid
+          </span>
+
+          <span class="menu-item-text">
+            Expenses
+          </span>
+
+        </div>
+
+        <div class="menu-item">
+
+          <span class="material-symbols-outlined icon">
+            heap_snapshot_thumbnail
+          </span>
+
+          <span class="menu-item-text">
+            Ratios
+          </span>
+
+        </div>
+
+        <div class="menu-item">
+
+          <span class="material-symbols-outlined icon">
+            table_view
+          </span>
+
+          <span class="menu-item-text">
+            Table
+          </span>
+
+        </div>
+
+        <div class="menu-item">
+
+          <span class="material-symbols-outlined icon">
+            dictionary
+          </span>
+
+          <span class="menu-item-text">
+            Glossary
+          </span>
+
+        </div>
+
+      </div>
+
+    </aside>
+    <div class="content">
+      <div class="content1">
+        <div class="card-left">
+          <h1>Financial Analysis</h1>
+        </div>
+        <div class="card-right">
+          <div class="card-right1">
+            <span class="material-symbols-outlined icon">
+              error
+            </span>
+          </div>
+          <div class="card-right2">
+            <span class="material-symbols-outlined icon">
+              reply
+            </span>
+            <span class="card-right1-text">
+              Reset all filters
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="content2">
+
+        <div class="card">
+          <h1>$17.6M</h1>
+          <h2>Revenue</h2>
+        </div>
+
+        <div class="card">
+          <h1>$13.2M</h1>
+          <h2>Expenses</h2>
+        </div>
+
+        <div class="card">
+          <h1>$11.1M</h1>
+          <h2>Gross Profit</h2>
+        </div>
+
+        <div class="card">
+          <h1>$5.2M</h1>
+          <h2>EBIT</h2>
+        </div>
+
+        <div class="card">
+          <h1>$4.3M</h1>
+          <h2>Net Profit</h2>
+        </div>
+
+      </div>
+      <div class="content3">
+
+        <div class="card-left">
+
+          <div class="card-left1">
+
+            <span class="material-symbols-outlined icon">
+              reorder
+            </span>
+
+            <span class="material-symbols-outlined icon">
+              ink_eraser
+            </span>
+
+          </div>
+
+          <div class="card-left2">
+            <span class="text">KPI's</span>
+          </div>
+
+          <div class="card-left3">
+            <span class="text-left-card">Opex</span>
+          </div>
+
+          <div class="card-left3">
+            <span class="text-left-card">Gross Profit</span>
+          </div>
+
+          <div class="card-left3">
+            <span class="text-left-card">EBIT</span>
+          </div>
+
+          <div class="card-left3">
+            <span class="text-left-card">Interest and Tax</span>
+          </div>
+
+          <div class="card-left4">
+            <span class="text-left-card">Net Profit</span>
+          </div>
+
+        </div>
+        <div class="chart-card"> <!-- Parte feita com aplicacao de chart JS + IA para grafico -->
+
+          <div class="chart-container">
+
+            <div class="chart-header">
+
+              <h2>
+                $ Net Profit and % Net Profit Margin VS Break-Even Point
+              </h2>
+
+              <p>
+                Break-Even Point is the sales level where total revenue matches total costs,
+                resulting in no profit or loss for the business.
+              </p>
+
+            </div>
+
+            <div class="chart-top">
+
+              <div class="chart-tools">
+
+                <div class="tool">
+
+                  <span class="material-symbols-outlined">
+                    reply
+                  </span>
+
+                  <span>Back</span>
+
+                </div>
+
+                <div class="tool">
+
+                  <span class="material-symbols-outlined">
+                    zoom_out
+                  </span>
+
+                  <span>Zoom-out</span>
+
+                </div>
+
+              </div>
+
+              <span class="material-symbols-outlined help-icon">
+                help
+              </span>
+
+            </div>
+
+            <div class="chart-wrapper">
+
+              <canvas id="financialChart"></canvas>
+
+            </div>
+
+            <div class="chart-footer">
+
+              <div class="legend">
+
+                <div class="legend-box dark"></div>
+
+                <span>$</span>
+
+              </div>
+
+              <div class="legend">
+
+                <div class="legend-line"></div>
+
+                <span>%</span>
+
+              </div>
+
+              <div class="legend">
+
+                <div class="legend-box light"></div>
+
+                <span>Break-even Point</span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div> <!-- Fim da Parte feita com aplicacao de chart JS + IA para grafico -->
+      </div>
+      <div class="content4">
+        <div class="card1">
+          <span class="text1">
+            2023 Progression of Financial Metrics: Revenue, Expenses, Gross Profit, EBIT and Net Profit
+          </span>
+          <span class="text2">
+            Expenses are the sum of COGS, Opex and Interest and Tax
+          </span>
+        </div>
+        <div class="card2">
+          <div class="card2-1">
+            <span class="material-symbols-outlined icon">
+              reply
+            </span>
+            <span class="text1">back</span>
+            <span class="material-symbols-outlined icon">
+              zoom_out
+            </span>
+            <span class="text1">zoom-out</span>
+          </div>
+          <div class="card2-2">
+            <span class="material-symbols-outlined icon"> help </span>
+          </div>
+        </div>
+        <div class="card3">
+          <div class="card3-1">
+            <div class="bloco1">
+              <span class="text1">17.56M</span>
+            </div>
+            <div class="bloco2"></div>
+          </div>
+          <div class="card3-2">
+            <div class="bloco1">
+              <span class="text1">-6.45M</span>
+            </div>
+            <div class="bloco2"></div>
+          </div>
+          <div class="card3-3">
+            <div class="bloco1">
+              <span class="text2">11.11M</span>
+            </div>
+            <div class="bloco2"></div>
+          </div>
+          <div class="card3-4">
+            <div class="bloco1">
+              <span class="text2">-6.87M</span>
+            </div>
+            <div class="bloco2"></div>
+          </div>
+          <div class="card3-5">
+            <div class="bloco1">
+              <span class="text3">5.24M</span>
+            </div>
+            <div class="bloco2"></div>
+          </div>
+          <div class="card3-6">
+            <div class="bloco1">
+              <span class="text3">-929.40K</span>
+            </div>
+            <div class="bloco2"></div>
+          </div>
+          <div class="card3-7">
+            <div class="bloco1">
+              <span class="text4">4.31M</span>
+            </div>
+            <div class="bloco2"></div>
+          </div>
+        </div>
+        <div class="card4">
+          <div class="footer">Revenue</div>
+          <div class="footer">COGS</div>
+          <div class="footer">Gross Profit</div>
+          <div class="footer">Opex</div>
+          <div class="footer">EBIT</div>
+          <div class="footer">Interest and Tax</div>
+          <div class="footer">Net Profit</div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script> <!-- Parte feita com aplicacao de chart JS + IA para grafico -->
+
+
+    Chart.register(ChartDataLabels);
+
+    window.onload = function () {
+
+      const ctx = document.getElementById('financialChart');
+
+      new Chart(ctx, {
+
+        data: {
+
+          labels: [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec'
+          ],
+
+          datasets: [
+
+            {
+              type: 'bar',
+
+              label: '$',
+
+              data: [
+                700, 480, 300, 200, 470, 500,
+                290, 270, 90, 300, 220, 540
+              ],
+
+              backgroundColor: '#373343',
+
+              borderRadius: 8,
+
+              barThickness: 52,
+
+              categoryPercentage: 0.72,
+
+              barPercentage: 0.95,
+
+              order: 2
+            },
+
+            {
+              type: 'bar',
+
+              label: 'Break-even Point',
+
+              data: [
+                390, 400, 320, 320, 400, 410,
+                340, 350, 340, 330, 360, 430
+              ],
+
+              backgroundColor: '#d9d8e1',
+
+              borderRadius: 8,
+
+              barThickness: 52,
+
+              categoryPercentage: 0.72,
+
+              barPercentage: 0.95,
+
+              order: 3
+            },
+
+            {
+              type: 'line',
+
+              label: '%',
+
+              data: [
+                35.6, 30.5, 23.0, 16.7,
+                27.5, 28.7, 20.6, 20.6,
+                8.2, 22.3, 16.4, 30.7
+              ],
+
+              borderColor: '#f0b90b',
+
+              backgroundColor: '#f0b90b',
+
+              tension: 0.32,
+
+              borderWidth: 2,
+
+              pointRadius: 4,
+
+              pointHoverRadius: 4,
+
+              pointBackgroundColor: '#000',
+
+              pointBorderColor: '#f0b90b',
+
+              pointBorderWidth: 2,
+
+              yAxisID: 'y1',
+
+              order: 1
+            }
+
+          ]
+
+        },
+
+        options: {
+
+          responsive: true,
+
+          maintainAspectRatio: false,
+
+          plugins: {
+
+            legend: {
+              display: false
+            },
+
+            tooltip: {
+              enabled: false
+            },
+
+            datalabels: {
+
+              color: '#1f1f1f',
+
+              align: 'top',
+
+              anchor: 'end',
+
+              offset: 8,
+
+              formatter: function (value, context) {
+
+                if (context.dataset.type === 'line') {
+                  return value + ' %';
+                }
+
+                return '';
+              },
+
+              font: {
+                size: 18,
+                weight: '600'
+              }
+
+            }
+
+          },
+
+          scales: {
+
+            y: {
+
+              beginAtZero: true,
+
+              max: 750,
+
+              ticks: {
+
+                stepSize: 250,
+
+                color: '#373343',
+
+                font: {
+                  size: 18,
+                  weight: '500'
+                },
+
+                callback: function (value) {
+
+                  if (value === 0) {
+                    return '$0.00';
+                  }
+
+                  return '$' + value + '.00K';
+                }
+
+              },
+
+              border: {
+                display: false
+              },
+
+              grid: {
+                color: '#ececf2',
+                drawTicks: false
+              }
+
+            },
+
+            y1: {
+
+              display: false,
+
+              position: 'right',
+
+              min: 0,
+              max: 40
+
+            },
+
+            x: {
+
+              ticks: {
+
+                color: '#373343',
+
+                font: {
+                  size: 18,
+                  weight: '500'
+                }
+
+              },
+
+              border: {
+                display: false
+              },
+
+              grid: {
+                display: false
+              }
+
+            }
+
+          }
+
+        }
+
+      });
+
+    };
+
+  </script> <!-- Fim da Parte feita com aplicacao de chart JS + IA para grafico -->
+
+</body>
+
+</html>
