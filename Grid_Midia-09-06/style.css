@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --cor-celular: #2600ff; 
+  --cor-tablet: #00490c; 
+  --cor-desktop: #fffb00;
+  --cor-background: #0f172a;
+}
+
+/* Configurações Globais Básicas */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+  transition: all 0.3s ease;
+  
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--cor-background);
+  color: #f8fafc;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.caixa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.caixa-img {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* Rodapé */
+footer {
+  margin-top: auto;
+  color: #64748b;
+  font-size: 0.85rem;
+  padding: 10px 0;
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+@media (max-width: 599px) {
+.Principal1{
+  background-color: var(--cor-celular); 
+  width: 100%;
+  font-size: 2rem;
+  border-radius: 20px;
+}  
+.caixa {
+    font-size: 0.9rem;
+}
+.Principal2, .rodape-tablet, .rodape-desktop, .caixa-6, .caixa-7, .caixa-8, .caixa-9 {
+ display: none;
+}
+
+.caixa-1 {
+  background-image: url("img/brasil-fundo.jpg");
+  width: 100%   ;
+  height: 250px;
+}  
+.caixa-10 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.caixa-10 img {
+  width: 200px;
+  height: auto;
+}
+} 
+
+/* ==========================================================================
+   ESTADO 2: TABLET (LARGURA MAIOR OU IGUAL A 600px)
+   ========================================================================== */
+
+/* Alturas das caixas no Tablet */
+
+@media (min-width: 600px) {
+.Principal1{
+  background-color: var(--cor-tablet);
+  width: 100%;
+  font-size: 2rem;
+  border-radius: 20px;
+} 
+  
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  
+.caixa-1  {
+    grid-column: 1 / 3; 
+    background-image: url("img/Brasil-tablet.webp");
+    width: 100%;
+    height: 450px;
+  }
+
+.caixa-10 {
+    
+  grid-column: 1 / 3; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.caixa-10 img {
+  width: 400px;
+  height: auto;
+}
+  .Principal3, .rodape-celular, .rodape-desktop, .caixa-8, .caixa-9 {
+    display: none;
+  }
+
+}
+
+/* ==========================================================================
+   ESTADO 3: DESKTOP (LARGURA MAIOR OU IGUAL A 1024px)
+   ========================================================================== */
+/* Alturas das caixas no Desktop */
+
+@media (min-width: 1024px) {
+.Principal1{
+  background-color: var(--cor-desktop);
+  width: 100%;
+  font-size: 4rem;
+  border-radius: 20px;
+  color: var(--cor-background);
+} 
+
+.caixa-1  {
+    grid-column: 1 / 4; 
+    background-image: url("img/Brasil-desktop.avif");
+    width: 100%;
+    height: 450px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+.rodape-celular, .rodape-tablet, .Principal2{
+   display: none;
+  }
+
+  .caixa-10 {
+    
+  grid-column: 1 / 4; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.caixa-10 img {
+  width: 600px;
+  height: auto;
+}
+
+ .caixa:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+  }
+
+}
