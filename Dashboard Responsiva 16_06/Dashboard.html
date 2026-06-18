@@ -19,8 +19,8 @@
     <div class="container">
         <aside class="sidebar">
             <div class="logo">
-                <span class="material-symbols-outlined logo-icon">
-                    face_5
+                <span class="material-symbols-outlined logo-icon" id="toggleTheme">
+                    dark_mode
                 </span>
                 <h1>Reinaldo Dashboards</h1>
 
@@ -82,6 +82,7 @@
         </aside>
         <main class="content">
             <header>
+                <div class="voltar-invisivel"></div>
                 <div class="header-empresa">
 
                     <span class="material-symbols-outlined icon">face_5</span>
@@ -272,9 +273,151 @@
                 </div>
 
             </div>
+            <div class="graphic-box2">
+
+                <div class="graphic2">
+
+                    <div class="graph2-header">
+                        <h3>Performance Overview</h3>
+                        <span>Team Progress</span>
+                    </div>
+
+                    <div class="graph2-grid">
+
+                        <div class="circle-card">
+                            <div class="circle">
+                                <span>75%</span>
+                            </div>
+                            <p>Design</p>
+                        </div>
+
+                        <div class="circle-card">
+                            <div class="circle">
+                                <span>55%</span>
+                            </div>
+                            <p>Development</p>
+                        </div>
+
+                        <div class="circle-card">
+                            <div class="circle">
+                                <span>90%</span>
+                            </div>
+                            <p>Marketing</p>
+                        </div>
+
+                        <div class="circle-card">
+                            <div class="circle">
+                                <span>40%</span>
+                            </div>
+                            <p>Testing</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="graphic-box3">
+
+                <div class="graphic3">
+
+                    <div class="card-top">
+                        <span class="title">Performance Table</span>
+                    </div>
+
+                    <div class="table">
+
+                        <div class="row header">
+                            <div>Task</div>
+                            <div>%</div>
+                            <div>Value</div>
+                            <div>Status</div>
+                        </div>
+
+                        <div class="row">
+                            <div>Design</div>
+                            <div class="green">+75%</div>
+                            <div>1200</div>
+                            <div class="green">Good</div>
+                        </div>
+
+                        <div class="row">
+                            <div>Development</div>
+                            <div class="red">-20%</div>
+                            <div>800</div>
+                            <div class="red">Bad</div>
+                        </div>
+
+                        <div class="row">
+                            <div>Marketing</div>
+                            <div class="green">+90%</div>
+                            <div>1500</div>
+                            <div class="green">Strong</div>
+                        </div>
+
+                        <div class="row">
+                            <div>Testing</div>
+                            <div class="red">-10%</div>
+                            <div>400</div>
+                            <div class="red">Weak</div>
+                        </div>
+
+                        <div class="row">
+                            <div>UX</div>
+                            <div class="green">+60%</div>
+                            <div>1100</div>
+                            <div class="green">OK</div>
+                        </div>
+
+                        <div class="row">
+                            <div>SEO</div>
+                            <div class="green">+45%</div>
+                            <div>900</div>
+                            <div class="green">Good</div>
+                        </div>
+
+                        <div class="row">
+                            <div>Support</div>
+                            <div class="red">-15%</div>
+                            <div>300</div>
+                            <div class="red">Low</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </main>
     </div>
 
 </body>
+<script>
+    const menuBtn = document.querySelector(".out");
+    const sidebar = document.querySelector(".sidebar");
+    const voltarInvisivel = document.querySelector(".voltar-invisivel");
+
+    menuBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("active");
+        voltarInvisivel.classList.toggle("active");
+    });
+
+    voltarInvisivel.addEventListener("click", () => {
+        sidebar.classList.remove("active");
+        voltarInvisivel.classList.remove("active");
+    });
+    const btnTheme = document.getElementById("toggleTheme");
+
+    btnTheme.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        if (document.body.classList.contains("dark")) {
+            btnTheme.textContent = "light_mode";
+        } else {
+            btnTheme.textContent = "dark_mode";
+        }
+    });
+</script>
 
 </html>
